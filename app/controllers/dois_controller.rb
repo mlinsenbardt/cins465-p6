@@ -1,6 +1,6 @@
 class DoisController < ApplicationController
   before_action :set_doi, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /dois
   # GET /dois.json
   def index
