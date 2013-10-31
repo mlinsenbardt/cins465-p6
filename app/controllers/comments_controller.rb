@@ -16,6 +16,13 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    if params[:doi_id]
+        @comment.doi_id = params[:doi_id]
+    if params[:user_id]
+        @comment.user_id = params[:user_id]
+    else
+        redirect_to root_comment
+    end
   end
 
   # GET /comments/1/edit

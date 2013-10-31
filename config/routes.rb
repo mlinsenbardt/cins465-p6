@@ -1,15 +1,17 @@
 Server::Application.routes.draw do
   get "profile/index"
   get "home/index"
+  get "home/query"
+
   devise_for :installs
+
   resources :dois
-
+  resources :home
   resources :comments
-
+  resources :profile
   resources :urls
 
   devise_for :users
-
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

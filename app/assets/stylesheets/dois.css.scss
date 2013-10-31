@@ -1,3 +1,42 @@
 // Place all the styles related to the Dois controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1
+{
+  text-decoration:underline;
+}
+
+table
+{
+  border-collapse: collapse;
+  border: 5px solid gray;
+  background:#d0f0f6
+}
+
+thead
+{
+  font-variant:small-caps;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:1.1em;
+  padding-top:5px;
+  padding-bottom:4px;
+  padding-right:5px;
+}
+
+tbody
+{
+	background-color:#A7C942;
+}
+
+td.alt
+{
+	background-color:#EAF2D3;
+}
+
+td
+{
+  text-allign:center;
+  border: 1px solid #5d9ab2;
+  padding: 1em;
+}

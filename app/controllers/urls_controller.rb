@@ -4,7 +4,11 @@ class UrlsController < ApplicationController
   # GET /urls
   # GET /urls.json
   def index
-    @urls = Url.all
+    if !params[:doi_id].nil? 
+        @urls = Url.where("doi_id IS ?", params[:doi_id])
+    else
+        @urls = Url.all
+    end
   end
 
   # GET /urls/1
@@ -15,6 +19,11 @@ class UrlsController < ApplicationController
   # GET /urls/new
   def new
     @url = Url.new
+    if params[:doi_id]
+        @url.doi_id = params[:doi_id]
+    else
+        redirect_to root_url
+    end
   end
 
   # GET /urls/1/edit
