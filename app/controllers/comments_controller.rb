@@ -16,12 +16,11 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.user_id = current_user.id
     if params[:doi_id]
-        @comment.doi_id = params[:doi_id]
-    if params[:user_id]
-        @comment.user_id = params[:user_id]
+      @comments.doi_id = params[:doi_id]
     else
-        redirect_to root_comment
+      redirect_to '/profile#index'
     end
   end
 

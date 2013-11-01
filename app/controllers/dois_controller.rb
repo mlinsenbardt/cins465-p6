@@ -15,10 +15,14 @@ class DoisController < ApplicationController
   # GET /dois/new
   def new
     @doi = Doi.new
+    @doi.user_id = current_user.id
   end
 
   # GET /dois/1/edit
   def edit
+	if current_user.id != @doi.user_id
+		redirect_to '/profile#index'
+	end
   end
 
   # POST /dois

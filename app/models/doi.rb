@@ -1,7 +1,7 @@
 class Doi < ActiveRecord::Base
     belongs_to :user
-    has_many :urls
-    :authenticate_user!
+    has_many :urls  
+    has_many :comments
 
-    attr_accessor :url
+    attr_accessor :url , :comment
 end

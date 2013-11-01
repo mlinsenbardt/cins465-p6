@@ -1,3 +1,3 @@
 class Url < ActiveRecord::Base
-    belongs_to :users
+    belongs_to :doi
 end

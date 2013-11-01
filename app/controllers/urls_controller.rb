@@ -20,14 +20,17 @@ class UrlsController < ApplicationController
   def new
     @url = Url.new
     if params[:doi_id]
-        @url.doi_id = params[:doi_id]
+      @url.doi_id = params[:doi_id]
     else
-        redirect_to root_url
+      redirect_to '/profile#index'
     end
   end
 
   # GET /urls/1/edit
   def edit
+	if current_user.id != @url.user_id
+		redirect_to '/profile#index'
+	end
   end
 
   # POST /urls
